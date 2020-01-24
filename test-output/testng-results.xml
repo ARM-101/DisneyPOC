@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="POC suite" duration-ms="257809" started-at="2020-01-24T03:51:10Z" finished-at="2020-01-24T03:55:27Z">
+    <groups>
+    </groups>
+    <test name="LogCategorizer" duration-ms="2" started-at="2020-01-24T03:51:10Z" finished-at="2020-01-24T03:51:10Z">
+      <class name="Testing.LIMBICARCPOC.LogCategorizer">
+        <test-method status="PASS" signature="beforeSuite(org.testng.ITestContext)[pri:0, instance:Testing.LIMBICARCPOC.LogCategorizer@1d29cf23]" name="beforeSuite" is-config="true" duration-ms="210" started-at="2020-01-23T19:51:09Z" finished-at="2020-01-23T19:51:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@50d0686]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="afterSuite(org.testng.ITestContext)[pri:0, instance:Testing.LIMBICARCPOC.LogCategorizer@1d29cf23]" name="afterSuite" is-config="true" duration-ms="13" started-at="2020-01-23T19:55:27Z" finished-at="2020-01-23T19:55:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@50d0686]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- Testing.LIMBICARCPOC.LogCategorizer -->
+    </test> <!-- LogCategorizer -->
+    <test name="POC_suite_ChromeLatestWindows10" duration-ms="257809" started-at="2020-01-24T03:51:10Z" finished-at="2020-01-24T03:55:27Z">
+      <class name="com.LimbicArc.testCases.SeleniumPOCTest">
+        <test-method status="PASS" signature="TestDriver(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.LimbicArc.testCases.SeleniumPOCTest@731a74c]" name="TestDriver" is-config="true" duration-ms="10590" started-at="2020-01-23T19:51:10Z" finished-at="2020-01-23T19:51:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Mac]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[latest]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[disney.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[QA]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[https]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[reddy.aravindm@gmail.com]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestDriver -->
+        <test-method status="PASS" signature="logintest()[pri:0, instance:com.LimbicArc.testCases.SeleniumPOCTest@731a74c]" name="logintest" duration-ms="246567" started-at="2020-01-23T19:51:20Z" finished-at="2020-01-23T19:55:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintest -->
+        <test-method status="FAIL" signature="tearDown()[pri:0, instance:com.LimbicArc.testCases.SeleniumPOCTest@731a74c]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-01-23T19:55:27Z" finished-at="2020-01-23T19:55:27Z">
+          <exception class="Testing.LIMBICARCPOC.FailedTestException">
+            <message>
+              <![CDATA[org.openqa.selenium.NoSuchFrameException: no such frame
+  (Session info: chrome=79.0.3945.130)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Aravinds-MBP.T-mobile.com', ip: '192.168.29.185', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.11.6', java.version: '1.8.0_162'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: /var/folders/c6/6slpsnxn151...}, goog:chromeOptions: {debuggerAddress: localhost:65317}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 7479ba79acf7aa83fcbcbb3360346be2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[Testing.LIMBICARCPOC.FailedTestException: org.openqa.selenium.NoSuchFrameException: no such frame
+  (Session info: chrome=79.0.3945.130)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Aravinds-MBP.T-mobile.com', ip: '192.168.29.185', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.11.6', java.version: '1.8.0_162'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: /var/folders/c6/6slpsnxn151...}, goog:chromeOptions: {debuggerAddress: localhost:65317}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 7479ba79acf7aa83fcbcbb3360346be2
+	at Testing.LIMBICARCPOC.TestController.VerificationCheck(TestController.java:77)
+	at com.LimbicArc.testCases.SeleniumPOCTest.tearDown(SeleniumPOCTest.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:514)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:232)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:115)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- Testing.LIMBICARCPOC.FailedTestException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.LimbicArc.testCases.SeleniumPOCTest -->
+    </test> <!-- POC_suite_ChromeLatestWindows10 -->
+  </suite> <!-- POC suite -->
+</testng-results>

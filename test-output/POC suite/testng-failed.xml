@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="10" guice-stage="DEVELOPMENT" name="Failed suite [POC suite]" parallel="tests">
+  <parameter name="targetHost" value="disney.com"/>
+  <parameter name="environment" value="QA"/>
+  <parameter name="protocol" value="https"/>
+  <parameter name="recipients" value="reddy.aravindm@gmail.com"/>
+  <parameter name="sendEmailOnSuccess" value="true"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="platformVersion" value="latest"/>
+  <parameter name="deviceName" value="Mac"/>
+  <test thread-count="20" name="POC_suite_ChromeLatestWindows10" parallel="classes">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="platformVersion" value="latest"/>
+    <parameter name="deviceName" value="Mac"/>
+    <classes>
+      <class name="com.LimbicArc.testCases.SeleniumPOCTest"/>
+    </classes>
+  </test> <!-- POC_suite_ChromeLatestWindows10 -->
+  <test thread-count="25" name="LogCategorizer" parallel="classes">
+    <classes>
+      <class name="Testing.LIMBICARCPOC.LogCategorizer"/>
+    </classes>
+  </test> <!-- LogCategorizer -->
+</suite> <!-- Failed suite [POC suite] -->

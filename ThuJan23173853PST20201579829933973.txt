@@ -1,0 +1,16 @@
+Mac_chrome_vlatest %%% com.LimbicArc.testCases.SeleniumPOCTest::e50ab7c94b4f5cf9da493bd7e1000155 %%%  1 %%%  (2020-01-23 17:39:07:341) - startTimeOfTest::1579829934108
+Mac_chrome_vlatest %%% com.LimbicArc.testCases.SeleniumPOCTest::e50ab7c94b4f5cf9da493bd7e1000155 %%%  2 %%%  (2020-01-23 17:39:47:621) - Deleting all cookies from current domain.
+Mac_chrome_vlatest %%% com.LimbicArc.testCases.SeleniumPOCTest::e50ab7c94b4f5cf9da493bd7e1000155 %%%  3 %%%  (2020-01-23 17:39:48:059) - TEST PASSED - page title is: Disney.com | The official home for all things Disney
+Mac_chrome_vlatest %%% com.LimbicArc.testCases.SeleniumPOCTest::e50ab7c94b4f5cf9da493bd7e1000155 %%%  4 %%%  (2020-01-23 17:40:49:144) - Clicking on: By.xpath: //li[@class='goc-desktop bar-dropdown'][2]/a
+Mac_chrome_vlatest %%% com.LimbicArc.testCases.SeleniumPOCTest::e50ab7c94b4f5cf9da493bd7e1000155 %%%  5 %%%  (2020-01-23 17:41:14:705) - Clicking on: By.xpath: /html/body/div[1]/header/nav/div/div[1]/div/div/div[2]/div[2]/div[1]/div/ul/li[3]/div/button/span/span
+Mac_chrome_vlatest %%% com.LimbicArc.testCases.SeleniumPOCTest::e50ab7c94b4f5cf9da493bd7e1000155 %%%  6 %%%  (2020-01-23 17:41:16:255) - Clicking on: By.xpath: //*[@id="did-ui-view"]/div/section/section/form/section/div[5]/a
+Mac_chrome_vlatest %%% com.LimbicArc.testCases.SeleniumPOCTest::e50ab7c94b4f5cf9da493bd7e1000155 %%%  7 %%%  (2020-01-23 17:41:24:240) - Clicking on: By.xpath: //*[@id="did-ui-view"]/div/section/section/form/section[7]/div/button
+Mac_chrome_vlatest %%% com.LimbicArc.testCases.SeleniumPOCTest::e50ab7c94b4f5cf9da493bd7e1000155 %%%  8 %%%  (2020-01-23 17:41:28:787) - Clicking on: By.xpath: //*[@id="did-ui-view"]/div/section/section/div/button
+Mac_chrome_vlatest %%% com.LimbicArc.testCases.SeleniumPOCTest::e50ab7c94b4f5cf9da493bd7e1000155 %%%  9 %%%  (2020-01-23 17:42:29:848) - ===============================================
+Mac_chrome_vlatest %%% com.LimbicArc.testCases.SeleniumPOCTest::e50ab7c94b4f5cf9da493bd7e1000155 %%%  10 %%%  (2020-01-23 17:42:29:848) - endTimeOfTest::1579830149848
+Mac_chrome_vlatest %%% com.LimbicArc.testCases.SeleniumPOCTest::e50ab7c94b4f5cf9da493bd7e1000155 %%%  11 %%%  (2020-01-23 17:42:29:848) - TEST FAILED - Details below:
+Mac_chrome_vlatest %%% com.LimbicArc.testCases.SeleniumPOCTest::e50ab7c94b4f5cf9da493bd7e1000155 %%%  12 %%%  (2020-01-23 17:42:29:848) - Total fails: 1
+Mac_chrome_vlatest %%% com.LimbicArc.testCases.SeleniumPOCTest::e50ab7c94b4f5cf9da493bd7e1000155 %%%  13 %%%  (2020-01-23 17:42:29:849) - -----------------------------------------------
+Mac_chrome_vlatest %%% com.LimbicArc.testCases.SeleniumPOCTest::e50ab7c94b4f5cf9da493bd7e1000155 %%%  14 %%%  (2020-01-23 17:42:29:849) - Exception thrown:
+Mac_chrome_vlatest %%% com.LimbicArc.testCases.SeleniumPOCTest::e50ab7c94b4f5cf9da493bd7e1000155 %%%  15 %%%  (2020-01-23 17:42:29:849) - java.lang.IllegalArgumentException: Argument is of an illegal type: org.openqa.selenium.By$ByXPath
+Mac_chrome_vlatest %%% com.LimbicArc.testCases.SeleniumPOCTest::e50ab7c94b4f5cf9da493bd7e1000155 %%%  16 %%%  (2020-01-23 17:42:29:849) - -----------------------------------------------
