@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="POC suite" thread-count="10" parallel="tests">
-	<parameter name="targetHost" value="disney.com"/>
+	<parameter name="targetHost" value="shopdisney.com"/>
 	<parameter name="environment" value="QA"/>
 	<parameter name="protocol" value="https"/>
 	<parameter name="sendEmailOnSuccess" value="true"/>

@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -56,13 +57,109 @@ public class SeleniumPOCTest {
 		try {
 
 			WebdriverAPI.getBaseURL(map, driver);
+			
+			
 			WebdriverAPI.browserClearCookies(driver, map);
 			//WebdriverAPI.waitForElementToExist(LoginPage.logo(), driver, map);
 			WebdriverAPI.validateTitle("Disney.com | The official home for all things Disney", driver, map);
 			//WebdriverAPI.waitUntilElementIsPresentAndClick(LoginPage.parksDropDown(), driver, map);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-			System.out.println("done with implicit wait");
+			
+			for(int i=0;i<=2;i++)
+			{
+				if(!WebdriverAPI.isElementExistsAndVisible(By.id("google_ads_iframe_/21783347309/dcom/homepage_1__"), driver, map))
+				{
+					break;
+				}
+				driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+				i++;
+			}
+			WebdriverAPI.waitUntilElementIsPresentAndClick(LoginPage.shoplink(), driver, map);
+			
+
+		
+			
+			
+			WebdriverAPI.clickIfElementPresent(LoginPage.signInLink(), driver, map);
+			
+			
+			driver.switchTo().frame(1);
+			
+			
+			WebdriverAPI.clickIfElementPresent(LoginPage.createAccountLink(), driver, map);
+			String email = "disneyTest838" + WebdriverAPI.randomAlphabet(3, 3) + "@yopmail.com";
+			//WebdriverAPI.sendKeys(LoginPage.emailInput(), email, driver, map);
+			//WebdriverAPI.sendKeys(LoginPage.confirmEmailInput(), email, driver, map);
+			String password = "Password@123";
+			String dateOfBirth ="04/29/1976";
+			
+			WebdriverAPI.sendKeys(LoginPage.firstNameInput(), "firstName", driver, map);
+			
+			WebdriverAPI.sendKeys(LoginPage.lastNameInput(), "lastName", driver, map);
+			
+			WebdriverAPI.sendKeys(LoginPage.emailInput(), email, driver, map);
+			WebdriverAPI.sendKeys(LoginPage.passwordInput(), password, driver, map);
+			WebdriverAPI.sendKeys(LoginPage.confirmPasswordnput(), password, driver, map);
+			WebdriverAPI.sendKeys(LoginPage.dateofBirth(),dateOfBirth, driver, map);
+			WebdriverAPI.click(LoginPage.CreateAccount(), driver, map);
+			
+			
+			WebdriverAPI.clickIfElementPresent(LoginPage.ContinueButton(), driver, map);
+			for(int i=0;i<=2;i++)
+			{
+				if(!WebdriverAPI.isElementExistsAndVisible(By.xpath("/html/body/div[9]/svg"), driver, map))
+				{
+					break;
+				}
+				driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+				i++;
+			}
+			driver.switchTo().defaultContent();
+			WebdriverAPI.waitUntilElementIsPresentAndClick(By.id("vacation"),driver,map);
+			WebdriverAPI.validateTitle("Vacation Shop | shopDisney", driver, map);
+			WebdriverAPI.waitUntilElementIsPresentAndClick(By.id("gifts"),driver,map);
+			WebdriverAPI.validateTitle("Gifts & Holiday Gifts | shopDisney", driver, map);
+			WebdriverAPI.waitUntilElementIsPresentAndClick(By.id("toys"),driver,map);
+			WebdriverAPI.validateTitle("Disney Toys | shopDisney", driver, map);
+			WebdriverAPI.waitUntilElementIsPresentAndClick(By.id("clothing"),driver,map);
+			WebdriverAPI.validateTitle("Clothing | shopDisney", driver, map);
+			WebdriverAPI.waitUntilElementIsPresentAndClick(By.id("accessories"),driver,map);
+			WebdriverAPI.validateTitle("Accessories | shopDisney", driver, map);
+			WebdriverAPI.waitUntilElementIsPresentAndClick(By.id("home"),driver,map);
+			WebdriverAPI.validateTitle("Home | shopDisney", driver, map);
+			WebdriverAPI.waitUntilElementIsPresentAndClick(By.id("parks"),driver,map);
+			WebdriverAPI.validateTitle("Parks | shopDisney", driver, map);
+			
+			
+			//driver.switchTo().defaultContent();
+			//System.out.println("By.className(\"user-message\") " +By.className("user-message"));
+			WebdriverAPI.clickIfElementPresent(By.className("user-message"), driver, map);
+			WebdriverAPI.clickIfElementPresent(By.className("signout"), driver, map);
+			
+		
+			String[] dataToWrite = { email, password };
+			ExcelUtils excelUtils = new ExcelUtils();
+			excelUtils.writeExcel("TestData.xlsx", "sheet1", dataToWrite);
+			((JavascriptExecutor) driver).executeScript("window.open()");
+			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+			driver.close();
+			driver.switchTo().window(tabs.get(1));
+			driver.get("chrome://settings/clearBrowserData");
+			driver.findElement(By.xpath("//settings-ui")).sendKeys(Keys.ENTER);
+
+
+			ArrayList<Map<String, String>> signInDetails = excelUtils.expectedResultsArrayList("TestData.xlsx", "sheet1");
+			WebdriverAPI.getBaseURL(map, driver);
+			
+			
+			WebdriverAPI.browserClearCookies(driver, map);
+			//WebdriverAPI.waitForElementToExist(LoginPage.logo(), driver, map);
+			WebdriverAPI.validateTitle("Disney.com | The official home for all things Disney", driver, map);
+			//WebdriverAPI.waitUntilElementIsPresentAndClick(LoginPage.parksDropDown(), driver, map);
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+			
 			System.out.println("clicking on shoplink" + LoginPage.shoplink());
 			for(int i=0;i<=2;i++)
 			{
@@ -77,33 +174,16 @@ public class SeleniumPOCTest {
 
 		
 			
-			System.out.println("clicking on signInlink" + LoginPage.signInLink());
+			
 			WebdriverAPI.clickIfElementPresent(LoginPage.signInLink(), driver, map);
 			
-			System.out.println("switching to frame1");
+			
 			driver.switchTo().frame(1);
+			WebdriverAPI.sendKeys(By.xpath("//*[@id='did-ui-view']/div/section/section/form/section/div[1]/div/label/span[2]/input"), signInDetails.get(0).get("UserName"), driver, map);
+			WebdriverAPI.sendKeys(By.xpath("//*[@id='did-ui-view']/div/section/section/form/section/div[2]/div/label/span[2]/input"), signInDetails.get(0).get("Password"), driver, map);
 			
-			System.out.println("clicking on createaccountlink" + LoginPage.createAccountLink());
-			WebdriverAPI.clickIfElementPresent(LoginPage.createAccountLink(), driver, map);
-			String email = "disneyTest838" + WebdriverAPI.randomAlphabet(3, 3) + "@yopmail.com";
-			//WebdriverAPI.sendKeys(LoginPage.emailInput(), email, driver, map);
-			//WebdriverAPI.sendKeys(LoginPage.confirmEmailInput(), email, driver, map);
-			String password = "Password@123";
-			String dateOfBirth ="04/29/1976";
-			System.out.println("Entering First Name");
-			WebdriverAPI.sendKeys(LoginPage.firstNameInput(), "firstName", driver, map);
-			System.out.println("Entering Last name");
-			WebdriverAPI.sendKeys(LoginPage.lastNameInput(), "lastName", driver, map);
-			System.out.println("Entering email");
-			WebdriverAPI.sendKeys(LoginPage.emailInput(), email, driver, map);
-			WebdriverAPI.sendKeys(LoginPage.passwordInput(), password, driver, map);
-			WebdriverAPI.sendKeys(LoginPage.confirmPasswordnput(), password, driver, map);
-			WebdriverAPI.sendKeys(LoginPage.dateofBirth(),dateOfBirth, driver, map);
-			WebdriverAPI.click(LoginPage.CreateAccount(), driver, map);
-			//WebdriverAPI.click(LoginPage.Vacationlbl(), driver, map);
-			
-			WebdriverAPI.clickIfElementPresent(LoginPage.ContinueButton(), driver, map);
-			for(int i=0;i<=5;i++)
+			WebdriverAPI.click(By.xpath("//*[@id='did-ui-view']/div/section/section/form/section/div[3]/button"), driver, map);
+			for(int i=0;i<=2;i++)
 			{
 				if(!WebdriverAPI.isElementExistsAndVisible(By.xpath("/html/body/div[9]/svg"), driver, map))
 				{
@@ -112,50 +192,22 @@ public class SeleniumPOCTest {
 				driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 				i++;
 			}
-			/*System.out.print("scroll ....");
-			JavascriptExecutor js = (JavascriptExecutor)driver;
+			driver.switchTo().defaultContent();
 			
-			js.executeScript("scrollBy(0, 3000)");*/
-		
-			
-			String[] dataToWrite = { email, password };
-			ExcelUtils excelUtils = new ExcelUtils();
-			excelUtils.writeExcel("TestData.xlsx", "sheet1", dataToWrite);
-			//driver.switchTo().defaultContent();
-			//System.out.println("By.className(\"user-message\") " +By.className("user-message"));
-			WebdriverAPI.clickIfElementPresent(By.className("user-message"), driver, map);
-			
-			String MainWindow=driver.getWindowHandle();	
-			Set<String> s1=driver.getWindowHandles();
-			Iterator<String> i1=s1.iterator();
-			System.out.println(s1);
-			
-			while(i1.hasNext())			
-	        {		
-	            String ChildWindow=i1.next();		
-	            		
-	            if(!MainWindow.equalsIgnoreCase(ChildWindow))			
-	            {    		
-	                 
-	                    // Switching to Child window
-	            	System.out.println(i1);	
-	            }
-	        }
-			
-			driver.switchTo().frame(1);
-			//driver.SelectFrame("relative=parent");
-			WebdriverAPI.clickIfElementPresent(LoginPage.signoutlink(), driver, map);
-			System.out.println("LoginPage.signOutLink()" + LoginPage.signOutLink());
-			WebdriverAPI.clickIfElementPresent(LoginPage.signOutLink(), driver, map);
-			System.out.println("LoginPage.signInLink()" + LoginPage.signInLink());
-			WebdriverAPI.clickIfElementPresent(LoginPage.signInLink(), driver, map);
-			//driver.switchTo().frame(1);
-
-			ArrayList<Map<String, String>> signInDetails = excelUtils.expectedResultsArrayList("TestData.xlsx", "sheet1");
-			WebdriverAPI.sendKeys(LoginPage.signInUserNameInput(), signInDetails.get(0).get("UserName"), driver, map);
-			WebdriverAPI.sendKeys(LoginPage.signInPasswordInput(), signInDetails.get(0).get("Password"), driver, map);
-			WebdriverAPI.click(LoginPage.submitBtn1(), driver, map);
-			
+			WebdriverAPI.waitUntilElementIsPresentAndClick(By.id("vacation"),driver,map);
+			WebdriverAPI.validateTitle("Vacation Shop | shopDisney", driver, map);
+			WebdriverAPI.waitUntilElementIsPresentAndClick(By.id("gifts"),driver,map);
+			WebdriverAPI.validateTitle("Gifts & Holiday Gifts | shopDisney", driver, map);
+			WebdriverAPI.waitUntilElementIsPresentAndClick(By.id("toys"),driver,map);
+			WebdriverAPI.validateTitle("Disney Toys | shopDisney", driver, map);
+			WebdriverAPI.waitUntilElementIsPresentAndClick(By.id("clothing"),driver,map);
+			WebdriverAPI.validateTitle("Clothing | shopDisney", driver, map);
+			WebdriverAPI.waitUntilElementIsPresentAndClick(By.id("accessories"),driver,map);
+			WebdriverAPI.validateTitle("Accessories | shopDisney", driver, map);
+			WebdriverAPI.waitUntilElementIsPresentAndClick(By.id("home"),driver,map);
+			WebdriverAPI.validateTitle("Home | shopDisney", driver, map);
+			WebdriverAPI.waitUntilElementIsPresentAndClick(By.id("parks"),driver,map);
+			WebdriverAPI.validateTitle("Parks | shopDisney", driver, map);
 		} catch (Exception | AssertionError e) {
 			map.put("exceptionString", e.toString());
 			tc.failedStep(map);

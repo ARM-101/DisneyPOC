@@ -76,7 +76,7 @@ public class LoginPage {
 		}
 		
 		public static By vacationv() {
-			return By.xpath("/html/body/div[1]/main/section[6]/div/header/h2");
+			return By.xpath("/html/body/div[1]/header/nav/div/div[1]/div/div/div[2]/div[2]/div[1]/div/ul/li[3]/div/div");
 		}
 		
 		public static By signoutlink() {
